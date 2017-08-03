@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use App;
 
 class RouteServiceProvider extends ServiceProvider
 {
@@ -23,9 +24,11 @@ class RouteServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
-
         parent::boot();
+//        Route::bind('author', function ($value) {
+//            return App\Author::where('name', $value)->first();
+//        });
+//        Route::model('author', App\Author::class);
     }
 
     /**
