@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Route;
 class AuthorController extends Controller
 {
     function index(App\Author $author){
-//        $this->getAllBooks();
-//        var_dump(Route::currentRouteAction());
         foreach($this->getAuthors() as $author){
             var_dump($author->email);
         }

@@ -47,6 +47,8 @@
 <!-- Theme JavaScript -->
 <script src="{{ asset("vendor/js/clean-blog.min.js") }}"></script>
 
+@yield('other_script');
+
 </body>
 
 </html>

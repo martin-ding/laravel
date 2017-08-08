@@ -26,4 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function posts(){
+        return $this->hasMany(Post::class);
+    }
+
+    public function publish(Post $post){
+        $this->posts()->save($post);
+        //save 方法是针对 一个 new Post("title","body");
+        //create 方法 可以使用 一个数组 $this->posts->create(["title","body"]);
+    }
 }

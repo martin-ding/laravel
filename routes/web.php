@@ -40,3 +40,16 @@ Route::get("/about",function(){
 Route::get("/contact",function(){
     return view("contact_us");
 });
+
+Route::resource("posts","PostsController");
+
+Route::get("posts/test","PostsController@test");
+
+Route::post("posts/{post}/comments","CommentsController@store");
+
+
+
+//Route::get("/register","RegisterController@create");
+//Route::post("/register","RegisterController@store");
+//
+//Route::get("/login","SessionController@create");

@@ -16,7 +16,7 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('/posts')->assertSee("ashdassadas");// 在看到 ashdassadas 的时候停止
 
         $response->assertStatus(200);
     }
