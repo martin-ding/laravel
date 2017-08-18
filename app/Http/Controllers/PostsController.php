@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\Tag;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreBlogPost;
@@ -24,9 +25,9 @@ class PostsController extends Controller
 
     public function index(Posts $posts)
     {
-        dd($posts);
-    $posts = $posts->all();
-//        $posts = Post::latest()->filter(request(["month","year"]))->get();
+//        dd($posts);
+//    $posts = $posts->all();
+        $posts = Post::latest()->filter(request(["month","year"]))->get();
 
 //        $posts = Post::orderBy("created_at","desc")->get();
         return view("posts.index",compact('posts'));
@@ -114,6 +115,14 @@ class PostsController extends Controller
     public function destroy(Post $post)
     {
         //
+    }
+
+    public function tags(Tag $tag = null){
+        return $tag->posts;
+    }
+
+    public function serviceContainer(){
+        var_dump(app("App\Billing\Stripe"));
     }
 
 }

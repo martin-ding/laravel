@@ -3,13 +3,26 @@
         <h4>About</h4>
         <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
     </div>
+    {{--Tags--}}
+
+    <div class="sidebar-module">
+        <h4>Tags</h4>
+        @if(count($tags))
+        <ol class="list-unstyled">
+            @foreach($tags as $tag)
+                <li><a href="/posts/tags/{{ $tag }}">{{ $tag }}</a></li>
+            @endforeach
+        </ol>
+        @endif
+    </div>
+
+    {{--Archives--}}
     <div class="sidebar-module">
         <h4>Archives</h4>
         @if(count($archives))
-
         <ol class="list-unstyled">
             @foreach($archives as $archive)
-                <li><a href="posts/?month={{$archive->month}}&year={{$archive->year}}">{{$archive->month }}月 {{$archive->year}}</a></li>
+                <li><a href="/posts/?month={{$archive->month}}&year={{$archive->year}}">{{$archive->month }}月 {{$archive->year}}</a></li>
             @endforeach
         </ol>
         @endif

@@ -1,4 +1,4 @@
-<?php
+`<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -29,6 +29,6 @@ class CreateAuthorTable extends Migration
      */
     public function down()
     {
-
+        Schema::dropIfExists('author');
     }
 }

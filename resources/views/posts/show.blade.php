@@ -24,6 +24,7 @@
         <div class="row">
             <div class="col-sm-8 blog-main">
                 @if(isset($post))
+
                     @include("posts.single")
                     @include("posts.comments")
                     <hr/>

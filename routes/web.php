@@ -11,6 +11,10 @@
 |
 */
 
+//$stripe = resolve('App\Billing\Stripe');
+//
+//dd($stripe);
+
 use Illuminate\Support\Facades\View;
 
 Route::get('/', ["as" => "homepage",function () {
@@ -47,9 +51,26 @@ Route::get("posts/test","PostsController@test");
 
 Route::post("posts/{post}/comments","CommentsController@store");
 
+//Route::get("email_test",function(){
+//   return view("emails.welcome_again");
+//});
 
 
+Route::get("posts/tags/{tag}","TagController@index");
+
+Route::get("servicetest","PostsController@serviceContainer");
 //Route::get("/register","RegisterController@create");
 //Route::post("/register","RegisterController@store");
 //
 //Route::get("/login","SessionController@create");
+
+
+
+Route::get("/threads","ThreadController@index");
+
+
+// admin page use metroic
+
+Route::get("/admin","AdminController@index");
+
+
